@@ -34,3 +34,4 @@ Route::get('/get_onhold_reviews', [ReviewController::class, 'getOnholdReviews'])
 Route::get('/get_approved_reviews/{id}', [ReviewController::class, 'getApprovedReviews']);
 Route::post('/add_review', [ReviewController::class, 'addReview']);
 Route::post('/accept_review', [ReviewController::class, 'acceptReview']);
+Route::post('/decline_review', [ReviewController::class, 'declineReview']);

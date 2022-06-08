@@ -19,7 +19,7 @@ class CreateReviewsTable extends Migration
             $table->integer('restaurant_id');
             $table->integer('status');
             $table->string('description');
-            $table->float('stars');
+            $table->float('stars')->nullable(true);
             $table->string('date');
         });
     }

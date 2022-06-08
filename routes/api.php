@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +28,7 @@ Route::post('/update_user', [UserController::class, 'updateUser']);
 
 Route::get('/get_restaurants/{id?}', [RestaurantController::class, 'getAllRestaurants']);
 Route::post('/add_restaurant', [RestaurantController::class, 'addRestaurant']);
+
+Route::get('/get_reviews/{id?}', [ReviewController::class, 'getAllReviews']);
 
 

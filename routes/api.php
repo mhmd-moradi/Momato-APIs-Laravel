@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RestaurantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,7 @@ Route::get('/get_users/{id?}', [UserController::class, 'getAllUsers']);
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/add_user', [UserController::class, 'addUser']);
 Route::post('/update_user', [UserController::class, 'updateUser']);
+
+Route::get('/get_restaurants/{id?}', [RestaurantController::class, 'getAllRestaurants']);
+
 

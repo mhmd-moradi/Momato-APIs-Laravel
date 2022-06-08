@@ -73,4 +73,14 @@ class ReviewController extends Controller
             "status" => "Success"
         ], 200);
     }
+
+    public function declineReview(Request $request){
+        Review::where('id', $request->review_id)->update([
+            'status'=> 3
+        ]);
+
+        return response()->json([
+            "status" => "Success"
+        ], 200);
+    }
 }

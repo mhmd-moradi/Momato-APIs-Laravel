@@ -49,4 +49,18 @@ class ReviewController extends Controller
             "reviews" => $reviews
         ], 200);
     }
+
+    public function addReview(Request $request){
+        $review = new Review;
+        $review->user_id = $request->user_id;
+        $review->restaurant_id = $request->restaurant_id;
+        $review->status = 1;
+        $review->description = $request->description;
+        $review->date = $request->date;
+        $review->save();
+
+        return response()->json([
+            "status" => "Success"
+        ], 200);
+    }
 }

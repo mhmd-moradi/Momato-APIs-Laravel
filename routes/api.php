@@ -30,5 +30,5 @@ Route::get('/get_restaurants/{id?}', [RestaurantController::class, 'getAllRestau
 Route::post('/add_restaurant', [RestaurantController::class, 'addRestaurant']);
 
 Route::get('/get_reviews/{id?}', [ReviewController::class, 'getAllReviews']);
-
+Route::get('/get_onhold_reviews', [ReviewController::class, 'getOnholdReviews']);
 

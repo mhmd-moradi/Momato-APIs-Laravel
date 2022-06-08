@@ -26,5 +26,6 @@ Route::post('/add_user', [UserController::class, 'addUser']);
 Route::post('/update_user', [UserController::class, 'updateUser']);
 
 Route::get('/get_restaurants/{id?}', [RestaurantController::class, 'getAllRestaurants']);
+Route::post('/add_restaurant', [RestaurantController::class, 'addRestaurant']);
 
 

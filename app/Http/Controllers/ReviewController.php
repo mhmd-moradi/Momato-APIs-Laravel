@@ -24,4 +24,15 @@ class ReviewController extends Controller
             "reviews" => $reviews
         ], 200);
     }
+
+    public function getOnholdReviews(){
+        $reviews = User::join('Reviews', 'Users.id', '=', 'Reviews.user_id')
+        ->where('Reviews.status', '=', 1)
+        ->get(['Users.*', 'Reviews.*']);
+        
+        return response()->json([
+            "status" => "Success",
+            "reviews" => $reviews
+        ], 200);
+    }
 }

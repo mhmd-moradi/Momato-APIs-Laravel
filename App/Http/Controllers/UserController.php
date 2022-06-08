@@ -54,4 +54,16 @@ class UserController extends Controller
             "user_id" => $user->id
         ], 200);
     }
+
+    public function updateUser(Request $request){
+        User::where('id', $request->user_id)->update([
+            'first_name'=> $request->first_name,
+            'last_name'=> $request->last_name,
+            'email'=> $request->email,
+        ]);
+
+        return response()->json([
+            "status" => "Success"
+        ], 200);
+    }
 }

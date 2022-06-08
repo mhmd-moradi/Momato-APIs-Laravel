@@ -36,4 +36,22 @@ class UserController extends Controller
             "users" => $user
         ], 200);
     }
+
+    public function addUser(Request $request){
+        $user = new User;
+        $user->username = $request->username;
+        $user->password = bcrypt($request->password);
+        $user->email = $request->email;
+        $user->role = 2;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->age = $request->age;
+        $user->gender = $request->gender;
+        $user->save();
+
+        return response()->json([
+            "status" => "Success",
+            "user_id" => $user->id
+        ], 200);
+    }
 }
